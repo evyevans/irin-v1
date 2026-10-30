@@ -25,7 +25,7 @@ def _returns(rows):
     return {(a["d"], b["d"]): b["ac"] / a["ac"] - 1 for a, b in zip(window, window[1:])}
 
 
-def evaluate_batch(snapshots, *, held, as_of, fx=None):
+def evaluate_batch(snapshots, *, held, as_of, fx=None, headlines=None, previous=None):
     """Evaluate a complete caller-defined universe with computed peer context.
 
     Returned provenance describes supplied attestations, never verification.
@@ -177,7 +177,13 @@ def evaluate_batch(snapshots, *, held, as_of, fx=None):
         prepared[ticker]["context"]["val_stats"] = copy.deepcopy(stats)
         prepared[ticker]["context"]["max_corr"] = maximum
         results.append(evaluate_snapshot(prepared[ticker], as_of=as_of))
+    from .leaderboard import rank
+
+    leaderboard = rank(
+        results, prepared, as_of=as_of, headlines=headlines, previous=previous
+    )
     return dict(
+        leaderboard=leaderboard,
         schema_version=1,
         mode="RESEARCH_ONLY",
         as_of=now.isoformat(),
@@ -239,7 +245,12 @@ def execute(args):
         raise InputError("Manifest snapshots must be a nonempty path array.")
     snapshots = [_load(args.manifest.parent / path) for path in paths]
     bundle = evaluate_batch(
-        snapshots, held=manifest.get("held"), as_of=args.as_of, fx=manifest.get("fx")
+        snapshots,
+        held=manifest.get("held"),
+        as_of=args.as_of,
+        fx=manifest.get("fx"),
+        headlines=manifest.get("headlines"),
+        previous=manifest.get("previous_ranks"),
     )
     from .demo import write_results
 

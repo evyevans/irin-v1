@@ -65,3 +65,9 @@ inspect those inputs before sharing artifacts.
 Statistics describe only the supplied population and can be affected by its
 selection bias. Small samples remain unavailable rather than inheriting defaults.
 All results are research only; execution remains disabled.
+
+## Ranked leaderboard and news
+
+`batch.json` includes a ranked leaderboard with component scores and prior-rank movement. Add optional `previous_ranks` (ticker to previous integer rank) and `headlines` (ticker to arrays) to the manifest. Each headline needs `title`, `url`, `published_at`, and `available_at`, with timezone timestamps. Only items published in the last 30 days and available by `--as-of` count. Fewer than two items receive a labelled neutral score. Headlines are supplied by the operator; the score is a simple keyword count, not verified sentiment or a forecast.
+
+The score adapts the original 100-point rubric to public research results. The public output does not expose the original balance-sheet grade, so this component uses a conservative four points when no balance veto exists, zero otherwise. Missing interest coverage gets no credit. No forecast range is generated. Ranking never bypasses paper-trading gates or places orders.
