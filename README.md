@@ -8,6 +8,10 @@ Public edition **1.2.0**. A Grok Bot research kit for **AI infrastructure, miner
 
 ![Three synthetic research scenarios](assets/demo.svg)
 
+![Grok Bot and market research illustration](assets/grok-bot-illustration.png)
+
+*Illustrative artwork; this community project is not affiliated with xAI or SpaceX.*
+
 ## Try it in one command
 
 From this repository's root, with **Python 3.11 or newer** installed:

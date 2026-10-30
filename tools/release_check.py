@@ -12,6 +12,8 @@ import re
 import sys
 
 SKIP = {".git", "__pycache__", "demo-output", ".venv"}
+# Explicitly reviewed public artwork. Other binary formats remain rejected.
+REVIEWED_PUBLIC_IMAGES = {"assets/grok-bot-illustration.png"}
 PATTERNS = [
     (
         "credential-like token",
@@ -72,6 +74,14 @@ def main():
                 raw = path.read_bytes()
                 text = raw.decode("utf-8")
             except UnicodeDecodeError:
+                if rel.as_posix() in REVIEWED_PUBLIC_IMAGES:
+                    if not raw.startswith(b"\x89PNG\r\n\x1a\n"):
+                        failures.add("reviewed image has an invalid PNG signature")
+                    if manifest is not None and manifest.get(
+                        rel.as_posix()
+                    ) != hashlib.sha256(raw).hexdigest():
+                        failures.add("reviewed image manifest missing or mismatched")
+                    continue
                 failures.add("non-text file requires explicit manual review")
                 continue
             if any(
@@ -86,8 +96,11 @@ def main():
                     for part in rel.parts
                 )
                 or (path.name.startswith(".env") and path.name != ".env.example")
-                or path.suffix
-                in {".pem", ".key", ".p12", ".pdf", ".png", ".jpg", ".gif"}
+                or (
+                    path.suffix
+                    in {".pem", ".key", ".p12", ".pdf", ".png", ".jpg", ".gif"}
+                    and rel.as_posix() not in REVIEWED_PUBLIC_IMAGES
+                )
             ):
                 failures.add("private, runtime, credential or unreviewed binary path")
             for label, pattern in PATTERNS:
