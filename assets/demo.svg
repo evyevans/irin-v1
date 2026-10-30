@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="400" viewBox="0 0 1100 400" role="img" aria-label="Bottleneck Atlas: three synthetic scenarios show RULES_PASS, missing evidence NO_TRADE and stale prices NO_TRADE; execution disabled">
+<rect width="1100" height="400" rx="18" fill="#101719"/>
+<g font-family="system-ui,sans-serif"><text x="44" y="56" fill="#b6e778" font-size="14" letter-spacing="3">BOTTLENECK ATLAS / SYNTHETIC DEMO</text>
+<text x="44" y="117" fill="#e8efeb" font-size="42" font-weight="700">A thesis should show its work.</text>
+<text x="44" y="153" fill="#bdcec5" font-size="18">Local research checks. Traceable inputs. Explicit gaps.</text>
+<rect x="44" y="190" width="320" height="132" rx="10" fill="#1b2c24" stroke="#435d4e"/><text x="64" y="224" fill="#b6e778" font-size="14" font-weight="700">RULES_PASS</text><text x="64" y="260" fill="#e8efeb" font-size="22">Declared evidence passes</text><text x="64" y="294" fill="#bdcec5" font-size="15">Research only · no order</text>
+<rect x="390" y="190" width="320" height="132" rx="10" fill="#25241e" stroke="#685e40"/><text x="410" y="224" fill="#e9ca81" font-size="14" font-weight="700">NO_TRADE</text><text x="410" y="260" fill="#e8efeb" font-size="22">Missing evidence</text><text x="410" y="294" fill="#bdcec5" font-size="15">Demand-to-cash-flow gap</text>
+<rect x="736" y="190" width="320" height="132" rx="10" fill="#25241e" stroke="#685e40"/><text x="756" y="224" fill="#e9ca81" font-size="14" font-weight="700">NO_TRADE</text><text x="756" y="260" fill="#e8efeb" font-size="22">Stale prices</text><text x="756" y="294" fill="#bdcec5" font-size="15">Refresh source observations</text>
+<text x="44" y="365" fill="#bdcec5" font-size="14">Illustration of bundled fixtures · no market data, performance claim or investor endorsement</text></g></svg>

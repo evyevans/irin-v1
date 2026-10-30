@@ -1,0 +1,29 @@
+# Validation record — 2026-10-30
+
+Environment: macOS arm64, Python 3.14.0; disposable PostgreSQL 17.6 compiled into a temporary directory from official checksum-verified source. No existing database, live financial account, messaging account or hosted provider project was changed.
+
+## Executed checks
+
+- `python3 -m unittest discover -s tests -v`: **202 tests pass**. Coverage includes inherited pure-engine regressions, malformed inputs, source value mismatch, explicit modes, paper signals/fills/exits, actual-cash sizing, round-trip costs, prospective concentration, sequential sessions, post-cost drawdown, local CAS, cloud HTTP boundaries, historical report balances, period completeness, duplicate reservation and the CLI flows.
+- `python3 -m atlas demo`: one synthetic RULES_PASS and two synthetic NO_TRADE scenarios; no broker execution.
+- `python3 -m atlas paper-demo`: synthetic queued signal, later-session fill, gap-stop exit and persisted/reloaded ledger/report. No messages or real orders. The displayed loss demonstrates a gap can exceed a planned stop loss; it is not a market result.
+- Offline research demo blocks socket creation in its test. Both demos need no API keys or external services.
+- `PG_BIN=/tmp/atlas-postgres/bin bash tools/test_postgres.sh`: actual clean migration, role/privilege checks, missing/NaN/negative cash rejection, duplicate idempotency, stale-revision rejection and simultaneous-writer race passed. Full initialized/enabled/signal/fill/replayed synthetic ledger and dated FX, dividend entitlement/payment, split, cash merger and benchmark registry round-tripped exactly through PostgreSQL. Both migrations applied; audit verification detected deliberately altered historical state. Cluster used a temporary Unix socket, no TCP listener, and was stopped/deleted after the run.
+- Independent implementation review found and reproduced skipped-session drawdown, prospective concentration, omitted exit costs, post-entry cost/drawdown state, historical report balance and modern-key header issues. Each was corrected; relevant regression tests pass. Previous malformed-fundamental/overflow/privacy fixes remain covered.
+- Cloud adapter sends modern secret keys through `apikey`; legacy JWT keys also use Bearer. Transport tests verify request headers and redacted provider errors without contacting an actual project.
+- Local private-term and pattern scan, manifest hashes and exact ZIP contents are checked during packaging. No original client/owner names, private brands, original project identifiers, private endpoints, memory, reports, binary assets or deployment history are part of the distribution.
+- Gitleaks 8.30.1 scanned the public source with no leaks found; packaging repeats the scan on the exact extracted artifact. Scanner was checksum-verified and used from a temporary directory.
+- Relative Markdown links resolve. README SVG parses. Generated reports are escaped and contain no scripts or remote resources. The browser policy blocks local-file preview, so no browser-based visual acceptance is claimed.
+
+- `python3 -m atlas accounting-demo`: persisted/reloaded explicit conversion, native sleeves, dividend entitlement/payment, split, cash merger, synthetic benchmark registry and CAD report; local audit chain verified. Partial-week metrics remain unavailable.
+- Integrated native CAD tests independently reconcile funding, entry, gap exit after FX change, settlement sleeves and asset/FX PnL. Readiness HOLD blocks entries while exits continue. Committee tests cover weighted decisions, bounded sizing, dissent, timing, evidenced veto/cure/expiry and retained veto terms; symbol migration preserves issuer committee history.
+- Review regressions cover missing merger consideration, queued-exit inheritance, above-basis distributions, same-instant FX replacement, accounting-state validation, empty optional FX, CAD period endpoint conversion, split-history normalization, late replay decisions, surplus audit dedupe records, debt mapping, negative capex/index levels and stale/nonconsecutive fundamental averages.
+- SEC/FRED network boundaries use fixed official hosts, refusal of redirects, bounded responses and timeouts. Automated research tests use local fixtures/mocked transports; live data feeds were not contacted. Source mappings and regex scans still need issuer-specific review.
+
+## Remaining verification limits
+
+The hosted Supabase HTTP gateway, Data API exposure settings, actual modern-key role mapping, optional live vendor availability/terms, Gmail/other sending connectors, and real Grok Bot skill/routine import have not been tested on a real account. PostgreSQL role emulation verifies the migration/store behavior but does not certify those platform features. Python 3.11 is configured in CI; local execution used 3.14.0. Hosted CI has not run before publication.
+
+This release implements the audited research/cloud/paper mechanisms, including native CAD/USD sleeves, explicit FX conversions/attribution, distributions and reorganizations, benchmarks, batch peer context, filing/fundamental/macro observations, operational readiness and committee lifecycle controls, and retained revision hash chains. It preserves mechanisms while replacing deployment-specific configuration, schema and private records. Hosted acceptance remains unverified; the idealized same-close fill model is documented in FEATURE_PARITY.md and LIMITATIONS.md. Unit tests and synthetic simulations establish no investment edge or performance claim.
+
+`RELEASE_FILES.json` contains the reviewed distribution inventory and SHA-256 hashes. Packaging uses only those files, excludes caches/runtime state, and verifies the extracted artifact. Any changed source requires intentional re-review and manifest regeneration. This record describes this particular release snapshot, not a permanent security guarantee.

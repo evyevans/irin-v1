@@ -1,0 +1,8 @@
+{
+  "operation": "configure",
+  "config": {
+    "required_checks": [
+      "source-health"
+    ]
+  }
+}
