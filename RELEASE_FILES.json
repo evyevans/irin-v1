@@ -5,12 +5,12 @@
   "CHANGELOG.md": "20cb87a9a1fd707ffd45a0ee00966291a0e59d64b6e84be19df5adfc3cf5dd51",
   "CONTRIBUTING.md": "5d639a5b48ab217f251bdf5dcd4b89103b9d6352f24fe6e77595455c644505e5",
   "LICENSE": "39f5a69012dadb44d6c1701af604d660a455c5bd4680a5b75f35f0e0e1e5f583",
-  "README.md": "832e6d19a580b8d7ebb8ac98e191babd1232447e48e51e0efbe0134a966337e4",
+  "README.md": "507278359f5a8ce7fc2d5df0161ca5abb2d456ae084731b9b00c82a750dd2d62",
   "SECURITY.md": "2267d2e892103e2e6ca945d4f1b045ee9762d4f855d8f8fb67254af388420b6c",
   "SETUP.md": "c6cd7d45cd3afdcf2d435fc88aac15a0acab6387021071c2e4a3c9a6cbe33a0a",
   "agent/PROFILE.md": "46156a9df67ec3ebc184a00efdc154ba37f61a76693c46b67011e70d299acc3d",
+  "assets/bottleneck-atlas-banner.png": "6fdc792719cedf29678768ab8cdd7793591ac9de2b5540eda60d6199da55c1cc",
   "assets/demo.svg": "6256c7c2ff76cf11d317453a017e5645da6f0643e7209f1472438c05892b866f",
-  "assets/grok-bot-illustration.png": "a1d98b58bea069034f5cc38af1c219cc36bc578084c126ee70e9d3ec510f85b4",
   "atlas/__init__.py": "329013e6180da079d3b46d57443fc657f03b42b1d553abc98c64b0ffca8c180e",
   "atlas/__main__.py": "ff772b72bb7bd5ac2a33732f09b6ed005d27b5a1033ddfc123f1b29ff87af7b5",
   "atlas/accounting.py": "36a308acd7ebf2d0a3c0e2b855b1892352e07d1ced2a04a5529dd05f43eb8254",
@@ -81,6 +81,6 @@
   "tests/test_public.py": "56bbe4148d67583ca39199a0f335f0223b10374cc812e090242a7e52ec925b5b",
   "tests/test_research_data.py": "a64c56d51623f2301f6529798c7b07254076008f1fac976d256a5b53eb8ea564",
   "tests/test_worker.py": "e0df472e8c47972d5fac623eec3ceca7c71a7c831395abdaaecad361b333cf88",
-  "tools/release_check.py": "f5d4f8faa9f4cdb2a879d07f0d7e14db37a0588aa75b204afcf12cb86315c9b7",
+  "tools/release_check.py": "a4f34024492a2447468c5fb49921847a51190be234db5d681d4cb8f51cbbf736",
   "tools/test_postgres.sh": "db2215730d5e6d0f358de8dc00ef2116618ae4c4608ede0fd22c174c8c9a7b06"
 }

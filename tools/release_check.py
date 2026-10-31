@@ -13,7 +13,7 @@ import sys
 
 SKIP = {".git", "__pycache__", "demo-output", ".venv"}
 # Explicitly reviewed public artwork. Other binary formats remain rejected.
-REVIEWED_PUBLIC_IMAGES = {"assets/grok-bot-illustration.png"}
+REVIEWED_PUBLIC_IMAGES = {"assets/bottleneck-atlas-banner.png"}
 PATTERNS = [
     (
         "credential-like token",

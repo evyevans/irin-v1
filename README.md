@@ -1,3 +1,5 @@
+![Bottleneck Atlas — Grok Bot research and market analysis](assets/bottleneck-atlas-banner.png)
+
 # Bottleneck Atlas
 
 **Show the evidence. Expose the gaps.**
@@ -5,12 +7,6 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/downloads/) [![MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 Public edition **1.2.0**. A Grok Bot research kit for **AI infrastructure, minerals, and power**. Turn a local, source-linked equity snapshot into deterministic research checks, explicit blockers, and an inspectable report.
-
-![Three synthetic research scenarios](assets/demo.svg)
-
-![Grok Bot and market research illustration](assets/grok-bot-illustration.png)
-
-*Illustrative artwork; this community project is not affiliated with xAI or SpaceX.*
 
 ## Try it in one command
 
