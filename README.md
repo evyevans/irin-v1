@@ -1,4 +1,4 @@
-![Bottleneck Atlas — Grok Bot research and market analysis](assets/bottleneck-atlas-banner.png)
+![IRIN banner: AI infrastructure, minerals, power, and Grok Bot](assets/bottleneck-atlas-banner.jpg)
 
 # Bottleneck Atlas
 

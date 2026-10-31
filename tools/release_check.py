@@ -13,7 +13,7 @@ import sys
 
 SKIP = {".git", "__pycache__", "demo-output", ".venv"}
 # Explicitly reviewed public artwork. Other binary formats remain rejected.
-REVIEWED_PUBLIC_IMAGES = {"assets/bottleneck-atlas-banner.png"}
+REVIEWED_PUBLIC_IMAGES = {"assets/bottleneck-atlas-banner.jpg"}
 PATTERNS = [
     (
         "credential-like token",
@@ -75,8 +75,8 @@ def main():
                 text = raw.decode("utf-8")
             except UnicodeDecodeError:
                 if rel.as_posix() in REVIEWED_PUBLIC_IMAGES:
-                    if not raw.startswith(b"\x89PNG\r\n\x1a\n"):
-                        failures.add("reviewed image has an invalid PNG signature")
+                    if not raw.startswith(b"\xff\xd8\xff"):
+                        failures.add("reviewed image has an invalid JPEG signature")
                     if manifest is not None and manifest.get(
                         rel.as_posix()
                     ) != hashlib.sha256(raw).hexdigest():
