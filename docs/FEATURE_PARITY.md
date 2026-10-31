@@ -1,6 +1,6 @@
 # Public workflow map
 
-Bottleneck Atlas implements the research, committee, operational-governance,
+IRIN implements the research, committee, operational-governance,
 accounting, reporting and persistent-paper mechanisms in a fresh public package.
 Mechanism parity means the source provides the corresponding calculations,
 state transitions and fail-closed controls described below. It does not mean

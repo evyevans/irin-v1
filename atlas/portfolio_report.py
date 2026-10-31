@@ -172,7 +172,7 @@ def write_report(state, week, output, as_of=None, report_currency="USD"):
     path = Path(output)
     path.mkdir(parents=True, exist_ok=True)
     lines = [
-        "Bottleneck Atlas · simulated portfolio",
+        "IRIN · simulated portfolio",
         f'Week: {data["week"]} to {data["end"]}',
         f'Last valued session: {data["last_session"]}',
         f'Synthetic: {data["synthetic"]}',
@@ -200,7 +200,7 @@ def write_report(state, week, output, as_of=None, report_currency="USD"):
         "Fees, slippage and fills are simulated assumptions. Source attestations are not independent verification. This report does not constitute financial advice."
     ]
     text = "\n".join(lines) + "\n"
-    body = "<h1>Bottleneck Atlas</h1><pre>" + escape(text) + "</pre>"
+    body = "<h1>IRIN</h1><pre>" + escape(text) + "</pre>"
     html = (
         '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src \'none\'; style-src \'unsafe-inline\'; base-uri \'none\'; form-action \'none\'"><title>Simulated portfolio</title><style>body{font:16px/1.6 system-ui;max-width:980px;margin:40px auto;padding:20px}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style>'
         + body

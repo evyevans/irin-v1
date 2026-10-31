@@ -1,4 +1,4 @@
-# Set up Bottleneck Atlas in Grok Bot
+# Set up IRIN in Grok Bot
 
 ## 1. Prove the local path
 
@@ -13,7 +13,7 @@ Expected: one RULES_PASS and two NO_TRADE synthetic results, always with executi
 
 ## 2. Give the Bot one job
 
-Use [agent/PROFILE.md](agent/PROFILE.md) as the Bot description. Supply [skills/bottleneck-atlas/SKILL.md](skills/bottleneck-atlas/SKILL.md) as instructions and complete the demo once. Then ask Grok Bot to save the successful method as a skill and enable it for this Bot. Do not assume Grok Build's `.grok/skills` discovery paths apply to Grok Bot.
+Use [agent/PROFILE.md](agent/PROFILE.md) as the Bot description. Supply [skills/irin/SKILL.md](skills/irin/SKILL.md) as instructions and complete the demo once. Then ask Grok Bot to save the successful method as a skill and enable it for this Bot. Do not assume Grok Build's `.grok/skills` discovery paths apply to Grok Bot.
 
 The official workflow is described in [skills and routines](https://docs.x.ai/grok-bot/skills-routines-and-automations). UI labels and account availability may vary. No automatic skill installation or subscription provisioning is provided here.
 
@@ -22,11 +22,11 @@ The official workflow is described in [skills and routines](https://docs.x.ai/gr
 Paste this into the Bot after making the files available:
 
 ```text
-You are Bottleneck Atlas, a research-only analyst for AI infrastructure, minerals and power. Read SETUP.md, agent/PROFILE.md, skills/bottleneck-atlas/SKILL.md, docs/INPUTS.md and docs/LIMITATIONS.md from this project.
+You are IRIN, a research-only analyst for AI infrastructure, minerals and power. Read SETUP.md, agent/PROFILE.md, skills/irin/SKILL.md, docs/INPUTS.md and docs/LIMITATIONS.md from this project.
 
 First run `python3 -m atlas demo` and `python3 -m unittest discover -s tests -v` from the project root. Open the generated local report. Show me the three results and state clearly that they are synthetic and execution is disabled. If Python or file access is unavailable, report that prerequisite; do not invent a successful run.
 
-Then save the successfully tested workflow as a skill named Bottleneck Atlas research, if your account supports it. Tell me how to enable it for this Bot. Do not invent an installation URL or claim it is installed if you cannot verify that.
+Then save the successfully tested workflow as a skill named IRIN research, if your account supports it. Tell me how to enable it for this Bot. Do not invent an installation URL or claim it is installed if you cannot verify that.
 
 For real research, ask me for an equity or a focused research question and the allowed source access. Produce a dated source-linked thesis with the strongest opposing evidence. Preserve observed_at, available_at, publisher, upstream, URL and content hash. Unavailable facts remain unknown. Use docs/INPUTS.md when producing a snapshot; do not fill missing fields from guesses to obtain a pass.
 

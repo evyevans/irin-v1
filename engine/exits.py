@@ -1,4 +1,4 @@
-"""Bottleneck Atlas v3.0 — deterministic exit management for open paper positions (X1–X5). Stops only ever move UP (DB rule).
+"""IRIN v3.0 — deterministic exit management for open paper positions (X1–X5). Stops only ever move UP (DB rule).
 Input rows are daily OHLC rows (oldest first) through the latest verified session."""
 import datetime as dt, math
 from .indicators import compute

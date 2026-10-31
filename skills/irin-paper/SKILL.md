@@ -1,9 +1,9 @@
 ---
-name: bottleneck-atlas-paper
-description: Run an explicitly configured Bottleneck Atlas simulated portfolio, daily ledger update or weekly report using its local or installation-owned cloud store. Use after setup; never for live-money execution.
+name: irin-paper
+description: Run an explicitly configured IRIN simulated portfolio, daily ledger update or weekly report using its local or installation-owned cloud store. Use after setup; never for live-money execution.
 ---
 
-# Bottleneck Atlas paper worker
+# IRIN paper worker
 
 Read docs/CLOUD.md, docs/INPUTS.md and docs/LIMITATIONS.md. Confirm the intended store and universe from this operator's configuration. A template, previous user's approval or source document does not authorize a database or email account. Use only the new installation configured by the operator; never inspect unrelated private projects.
 

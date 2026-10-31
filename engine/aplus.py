@@ -1,4 +1,4 @@
-"""Bottleneck Atlas v3.0 — A+ setup engine. Pure, deterministic functions: same inputs -> same grade. PAPER SIMULATION ONLY.
+"""IRIN v3.0 — A+ setup engine. Pure, deterministic functions: same inputs -> same grade. PAPER SIMULATION ONLY.
 Retains the project-authored A+ heuristics (see docs/LIMITATIONS.md) with the existing 12-lens committee: the 7 score lenses
 (Buffett, Klarman, Graham, Greenblatt, Fisher, Lynch, Munger), 3 sizing lenses (Marks, Dalio, Bogle), 2 timing lenses
 (Tudor Jones, Soros) and the 3 vetoes (Graham, Munger, Tudor Jones). Where the spec and an existing constitutional / DB rule

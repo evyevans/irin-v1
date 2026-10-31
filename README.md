@@ -1,12 +1,40 @@
-![IRIN banner: AI infrastructure, minerals, power, and Grok Bot](assets/bottleneck-atlas-banner.jpg)
+![IRIN banner: AI infrastructure, minerals, power, and Grok Bot](assets/irin-banner.jpg)
 
-# Bottleneck Atlas
+# IRIN
 
 **Show the evidence. Expose the gaps.**
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/downloads/) [![MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 Public edition **1.2.0**. A Grok Bot research kit for **AI infrastructure, minerals, and power**. Turn a local, source-linked equity snapshot into deterministic research checks, explicit blockers, and an inspectable report.
+
+## Who IRIN is for
+
+IRIN helps independent investors, equity researchers, and technically minded teams organize evidence about the companies supplying AI infrastructure. A human remains responsible for sources, assumptions, and investment decisions. Developers and AI agents can use the same local commands and inspect the resulting files.
+
+## How it works
+
+```mermaid
+flowchart LR
+    A[Operator supplies dated sources and snapshot] --> B[Research and evidence checks]
+    B --> C[Research report and blockers]
+    B --> D[Optional simulated portfolio]
+    D --> E[Local SQLite or installation-owned Supabase]
+```
+
+IRIN checks the chain from AI demand to customer contracts, revenue, margins and cash flow. It records missing or stale evidence rather than filling gaps with guesses. An optional leaderboard ranks eligible snapshots; news scoring uses headlines supplied by the operator. Paper trades are simulated and require explicit setup.
+
+## Download and run
+
+Install Git and Python 3.11 or newer, then open a terminal and run:
+
+```bash
+git clone https://github.com/evyevans/irin-v1.git
+cd irin-v1
+python3 -m atlas demo
+```
+
+On Windows, use `py -3 -m atlas demo` if `python3` is unavailable. Open `demo-output/report.html` in your browser. If Git is unavailable, use GitHub's **Code → Download ZIP**, extract it, open a terminal in the extracted folder, and run the demo command.
 
 ## Try it in one command
 
@@ -26,9 +54,18 @@ NO_TRADE   | SYNTHETIC | DEMO-GRID | execution disabled
 
 The scenarios show an all-pass synthetic example, missing evidence, and stale prices. They are fixed historical fixtures, not current market observations, recommendations, or investment returns.
 
+## Examples of how to use IRIN
+
+- **Investigate a mining supplier:** gather dated filings and independent sources, build a snapshot, then review whether evidence connects AI demand to that supplier's revenue and cash flow. Missing links remain blockers.
+- **Compare a watchlist:** run the [batch workflow](docs/BATCH.md) on prepared snapshots and supplied headlines. Inspect the score, eligibility and prior-rank movement; a ranking is not a forecast.
+- **Practice portfolio operations:** run `python3 -m atlas paper-demo` to inspect simulated entries, exits, costs and a saved ledger. Use the accounting guide to explore FX, dividends, corporate actions and benchmarks with your own reviewed inputs.
+- **Work with an agent:** provide the project folder and the bootstrap prompt in [SETUP.md](SETUP.md). Ask the agent to show the synthetic demo output and identify missing prerequisites before researching a real company.
+
+These examples describe workflows, not verified returns or investment recommendations.
+
 ## Why this exists
 
-An AI-written investment thesis can sound complete while its evidence is stale, its cash-flow link is missing, or its position size breaks a limit. Bottleneck Atlas makes these gaps inspectable. The useful output is often **NO_TRADE**, with a reason for each blocked check.
+An AI-written investment thesis can sound complete while its evidence is stale, its cash-flow link is missing, or its position size breaks a limit. IRIN makes these gaps inspectable. The useful output is often **NO_TRADE**, with a reason for each blocked check.
 
 - **Evidence chain:** AI demand → customer contracts → revenue/backlog → margin and cash flow.
 - **Deterministic checks:** valuation, listing/focus, trend, liquidity, balance-sheet vetoes, sizing and portfolio room.
@@ -60,7 +97,7 @@ Read [ACCOUNTING.md](docs/ACCOUNTING.md) for FX, action and split-history contra
 
 ## Use it with Grok Bot
 
-Start with [SETUP.md](SETUP.md), then [agent/PROFILE.md](agent/PROFILE.md) and [the research skill](skills/bottleneck-atlas/SKILL.md). Paste the bootstrap prompt from SETUP into your Bot after placing this folder on its computer.
+Start with [SETUP.md](SETUP.md), then [agent/PROFILE.md](agent/PROFILE.md) and [the research skill](skills/irin/SKILL.md). Paste the bootstrap prompt from SETUP into your Bot after placing this folder on its computer.
 
 This is a **community workflow pack designed for Grok Bot**, not an official xAI product, hosted service, or Grok API trading bot. The Python demo is tested locally. Importing this skill and running the complete workflow inside Grok Bot still need an end-to-end acceptance test. Grok Bot access, connected sources, and optional data services can have separate costs. [Official skills and routines documentation](https://docs.x.ai/grok-bot/skills-routines-and-automations).
 
@@ -96,6 +133,12 @@ The cloud migration is a clean, generic store for this installation. No inherite
 No validated alpha, backtest, live performance, benchmark outperformance or audited win rate is claimed. The 13 named lenses in the retained engine are project-authored heuristics inspired by published investing concepts. They do not replicate, consult, speak for, or imply endorsement by any investor. Reported targets are hypothetical rule inputs, not forecasts.
 
 The standalone research evaluator stays `RESEARCH_ONLY`. The explicit `paper` commands persist simulated money and hypothetical positions; broker execution remains absent. The entry model requalifies at the next session close and simulates that same close, an idealization that can bias results. USD-base accounting now includes native USD/CAD cash settlement, explicit fee-bearing conversions, dividend receivables, reviewed corporate actions and operator-configured benchmarks. CAD reporting is a view of the USD ledger. Source, distribution-completeness, withholding and cost-basis inputs remain operator attestations; tax filing and broker reconciliation are absent. See [LIMITATIONS.md](docs/LIMITATIONS.md), [market data](docs/MARKET_DATA.md) and the [feature map](docs/FEATURE_PARITY.md).
+
+## Configuration and next steps
+
+The offline demos need only Python. Real research needs operator-supplied snapshots and source records; optional market refresh requires network access. Persistent cloud use requires a separately created Supabase project and credentials configured for that installation. See [input requirements](docs/INPUTS.md), [cloud setup](docs/CLOUD.md), and [market data](docs/MARKET_DATA.md). Never commit credentials or private portfolio data.
+
+Grok Bot import and hosted Supabase operation have not been verified end to end for this release. Start locally, follow [SETUP.md](SETUP.md), and record your own acceptance results before relying on a hosted workflow.
 
 ## Develop
 

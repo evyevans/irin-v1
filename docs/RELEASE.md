@@ -14,13 +14,13 @@ The code licence is MIT, but source data and the Grok Bot platform have separate
 
 ## Positioning
 
-**Bottleneck Atlas: source-linked AI-infrastructure research checks for Grok Bot.**
+**IRIN: source-linked AI-infrastructure research checks for Grok Bot.**
 
 Lead with the actual pain point: a convincing AI thesis is hard to audit. Show the synthetic pass/missing/stale examples and an expandable failed-rule report. A small, reliable tool is easier to trust than a broad claim of financial autonomy.
 
 ## Suggested announcement
 
-> Show HN: Bottleneck Atlas – Audit AI infrastructure research
+> Show HN: IRIN – Audit AI infrastructure research
 >
 > I built a Grok Bot workflow pack and local Python research engine for AI infrastructure, minerals and power. It checks a source-linked equity snapshot and explains missing evidence, stale inputs and failed risk rules. The offline research and persistent paper demos need only Python and run without keys. The optional cloud store starts empty, with per-install settings and explicit enablement. It includes synthetic pass/missing/stale scenarios and inspectable HTML/JSON output. It is research-only; no performance or autonomous trading claims. I'd value feedback on provenance gaps and the input contract.
 >

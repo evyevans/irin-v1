@@ -1,9 +1,9 @@
 ---
-name: bottleneck-atlas
+name: irin
 description: Research AI infrastructure, minerals and power equities using source-linked evidence, explicit uncertainty and deterministic local research checks. Use for a bottleneck thesis, evidence audit or paper-research report; never live execution.
 ---
 
-# Bottleneck Atlas research
+# IRIN research
 
 ## Inputs and access
 

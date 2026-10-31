@@ -14,7 +14,7 @@ from .demo import run_demo, write_results
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Bottleneck Atlas · local equity research, never execution"
+        description="IRIN · local equity research, never execution"
     )
     commands = parser.add_subparsers(dest="command", required=True)
     demo = commands.add_parser("demo", help="Run three synthetic, offline examples")

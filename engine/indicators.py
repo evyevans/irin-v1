@@ -1,4 +1,4 @@
-"""Bottleneck Atlas v3.0 — deterministic technical indicators on daily rows (oldest first). Missing history -> None (the rule then FAILS)."""
+"""IRIN v3.0 — deterministic technical indicators on daily rows (oldest first). Missing history -> None (the rule then FAILS)."""
 def _closes(rows, key="c"): return [r[key] for r in rows]
 def sma(vals, n):
     return None if len(vals) < n else sum(vals[-n:]) / n
