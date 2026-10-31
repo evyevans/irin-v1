@@ -489,7 +489,7 @@ def scan_filing(text, *, filed, as_of, source=None):
 
 
 def _fetch(url, *, sec=False):
-    ua = os.environ.get("SEC_USER_AGENT", "") if sec else "BottleneckAtlas/1.0"
+    ua = os.environ.get("SEC_USER_AGENT", "") if sec else "IRIN/1.0"
     if sec and (not ua.strip() or "@" not in ua or "\n" in ua or "\r" in ua):
         raise ValueError(
             "Set SEC_USER_AGENT to operator organization and contact email"
